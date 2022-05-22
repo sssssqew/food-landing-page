@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Food Landing page website UI Design Tutorial</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="#" class="fas fa-bars"></a>
+    <ul>
+      <li><a href="#">about</a></li>
+      <li><a href="#">contact</a></li>
+      <li><a href="#">dishes</a></li>
+      <li><a href="#">login</a></li>
+    </ul>
+  </header>
+
+  <section class="container">
+    <div class="content">
+      <h1>
+        <span class="span1">better</span>
+        <span class="span2">food,</span>
+        better life
+      </h1>
+      <a href="#" class="btn">read more <i class="fas fa-arrow-right"></i></a>
+      <div class="icons">
+        <a href="#" class="fab fa-facebook"></a>
+        <a href="#" class="fab fa-twitter"></a>
+        <a href="#" class="fab fa-instagram"></a>
+      </div>
+    </div>
+
+    <div class="image">
+      <div class="cursor"></div>
+    </div>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    $(document).ready(function(){
+      $('.container').mousemove(function(e){
+        var x = e.pageX + 'px'
+        var y = e.pageY + 'px'
+        $('.cursor').css({'top':y, 'left': x})
+      })
+      var images = ['food-1.jpg','food-2.jpg','food-3.jpg']
+      setInterval(function(){
+        var random = images[Math.floor(Math.random() * images.length)]
+        $('.image').css('background', `url(${random})`)
+      }, 2500)
+    })
+  </script>
+</body>
+</html>
